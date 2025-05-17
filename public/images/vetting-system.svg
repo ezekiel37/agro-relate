@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f0f8f0" rx="10" ry="10"/>
+  
+  <g transform="translate(400, 300)">
+    <!-- Document with checkmark -->
+    <g transform="translate(-100, 0)">
+      <path d="M-60,-80 L60,-80 L60,80 L-60,80 Z" fill="#ffffff" stroke="#4caf50" stroke-width="5"/>
+      <path d="M-40,-60 L40,-60 M-40,-30 L40,-30 M-40,0 L20,0 M-40,30 L0,30" stroke="#9e9e9e" stroke-width="5" stroke-linecap="round"/>
+      
+      <!-- Green checkmark -->
+      <g transform="translate(0, 40) scale(0.8)">
+        <circle cx="0" cy="0" r="40" fill="#4caf50" opacity="0.2"/>
+        <path d="M-20,0 L-5,15 L20,-15" stroke="#4caf50" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+    
+    <!-- Magnifying glass -->
+    <g transform="translate(100, 0) scale(0.8)">
+      <circle cx="-15" cy="-15" r="50" fill="none" stroke="#2196f3" stroke-width="8"/>
+      <line x1="20" y1="20" x2="60" y2="60" stroke="#2196f3" stroke-width="12" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Connecting arrow -->
+    <path d="M-20,0 L20,0" stroke="#4caf50" stroke-width="5" stroke-linecap="round"/>
+    <polygon points="20,-10 40,0 20,10" fill="#4caf50"/>
+  </g>
+  
+  <!-- Text at bottom -->
+  <text x="400" y="550" font-family="Arial" font-size="24" text-anchor="middle" fill="#2e5c34">Vetting System</text>
+</svg>

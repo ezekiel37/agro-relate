@@ -43,24 +43,24 @@ const ProblemSolution: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
             The Problem:
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ProblemCard 
-              title="Lack of Funding" 
+            <ProblemCard
+              title="Lack of Funding"
               description="70% of smallholder farmers in Nigeria lack access to affordable, timely funding."
-              imageSrc="/placeholder.svg"
+              imageSrc="/images/woman.png"
             />
-            
-            <ProblemCard 
-              title="Investor's Hesitation" 
+
+            <ProblemCard
+              title="Investor's Hesitation"
               description="Investors find distinct lack structured trustworthy access to high-impact agricultural projects."
-              imageSrc="/placeholder.svg"
+              imageSrc="/images/man.png"
             />
-            
-            <ProblemCard 
-              title="Financial Aversion" 
+
+            <ProblemCard
+              title="Financial Aversion"
               description="Traditional financial institutions avoid small-scale agriculture due to perceived risk."
-              imageSrc="/placeholder.svg"
+              imageSrc="/images/bank.png"
             />
           </div>
         </div>
@@ -71,24 +71,24 @@ const ProblemSolution: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
             The Solution:
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <SolutionCard 
-              title="Vetting System" 
+            <SolutionCard
+              title="Vetting System"
               description="KYC, location verification & farmer's records."
-              imageSrc="/placeholder.svg"
+              imageSrc="/images/shake.png"
             />
-            
-            <SolutionCard 
-              title="Profit-sharing models" 
+
+            <SolutionCard
+              title="Profit-sharing models"
               description="Fixed-returns options for both parties."
-              imageSrc="/placeholder.svg"
+              imageSrc="/images/3dchart.png"
             />
-            
-            <SolutionCard 
-              title="Transparent Reporting" 
+
+            <SolutionCard
+              title="Transparent Reporting"
               description="Monitoring tools for investors."
-              imageSrc="/placeholder.svg"
+              imageSrc="/images/trend.png"
             />
           </div>
         </div>

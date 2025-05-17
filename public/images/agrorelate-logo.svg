@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <!-- Circle background -->
+  <circle cx="200" cy="170" r="130" fill="white" stroke="#0A4A2F" stroke-width="10"/>
+  
+  <!-- Leaf -->
+  <path d="M120,170 C120,100 180,70 230,90 C280,110 300,150 290,210 C280,270 230,300 180,290 C130,280 120,240 120,170 Z" fill="#0A4A2F"/>
+  <path d="M180,150 C200,120 230,110 260,130" fill="none" stroke="white" stroke-width="8"/>
+  
+  <!-- Handshake -->
+  <path d="M150,220 C170,240 190,240 210,220 C230,200 250,200 270,220" fill="none" stroke="#8CC63F" stroke-width="8"/>
+  
+  <!-- Growth chart -->
+  <path d="M180,180 L200,160 L220,170 L240,150 L260,130" fill="none" stroke="#8CC63F" stroke-width="8"/>
+  <path d="M180,180 L180,200 L240,200" fill="none" stroke="#8CC63F" stroke-width="8"/>
+  <path d="M180,180 L200,200 L220,180" fill="none" stroke="#8CC63F" stroke-width="8"/>
+  
+  <!-- House icon -->
+  <path d="M190,200 L190,220 L210,220 L210,200 Z" fill="#8CC63F"/>
+  <path d="M180,200 L200,180 L220,200" fill="#8CC63F"/>
+  
+  <!-- Dots -->
+  <circle cx="270" cy="140" r="5" fill="#333"/>
+  <circle cx="280" cy="150" r="3" fill="#333"/>
+  
+  <!-- Text -->
+  <text x="200" y="350" font-family="Arial" font-size="48" font-weight="bold" text-anchor="middle" fill="#0A4A2F">AgroRelate</text>
+  <text x="200" y="380" font-family="Arial" font-size="16" text-anchor="middle" fill="#0A4A2F">Connecting Farmers to Investors</text>
+</svg>

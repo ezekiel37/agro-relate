@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f0f8f0" rx="10" ry="10"/>
+  
+  <g transform="translate(400, 300)">
+    <!-- Bank building -->
+    <g transform="translate(-100, 0) scale(0.8)">
+      <rect x="-80" y="-60" width="160" height="120" fill="#e0e0e0" stroke="#757575" stroke-width="5"/>
+      <rect x="-100" y="-80" width="200" height="30" fill="#9e9e9e"/>
+      <rect x="-100" y="60" width="200" height="10" fill="#9e9e9e"/>
+      
+      <!-- Columns -->
+      <rect x="-70" y="-50" width="20" height="100" fill="#bdbdbd" rx="5" ry="5"/>
+      <rect x="-20" y="-50" width="20" height="100" fill="#bdbdbd" rx="5" ry="5"/>
+      <rect x="30" y="-50" width="20" height="100" fill="#bdbdbd" rx="5" ry="5"/>
+      
+      <!-- Dollar sign -->
+      <text x="0" y="15" font-family="Arial" font-size="40" text-anchor="middle" fill="#4caf50">$</text>
+    </g>
+    
+    <!-- Farm icon -->
+    <g transform="translate(100, 0) scale(0.7)">
+      <rect x="-40" y="-10" width="80" height="60" fill="#8bc34a"/>
+      <path d="M-60,-10 L0,-50 L60,-10" fill="#5a9367" stroke="#5a9367" stroke-width="5"/>
+      
+      <!-- Plant/crop -->
+      <path d="M-20,50 C-20,30 -10,20 0,10 C10,20 20,30 20,50" fill="none" stroke="#5a9367" stroke-width="5"/>
+      <line x1="0" y1="10" x2="0" y2="50" stroke="#5a9367" stroke-width="5"/>
+    </g>
+    
+    <!-- Red X mark between bank and farm -->
+    <g transform="translate(0, 0) scale(1)">
+      <line x1="-30" y1="-30" x2="30" y2="30" stroke="#d32f2f" stroke-width="10" stroke-linecap="round"/>
+      <line x1="30" y1="-30" x2="-30" y2="30" stroke="#d32f2f" stroke-width="10" stroke-linecap="round"/>
+    </g>
+  </g>
+  
+  <!-- Text at bottom -->
+  <text x="400" y="550" font-family="Arial" font-size="24" text-anchor="middle" fill="#2e5c34">Financial Aversion</text>
+</svg>

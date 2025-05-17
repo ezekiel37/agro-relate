@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f0f8f0" rx="10" ry="10"/>
+  
+  <g transform="translate(400, 300)">
+    <!-- Pie chart -->
+    <g transform="translate(0, 0)">
+      <circle cx="0" cy="0" r="120" fill="#ffffff" stroke="#4caf50" stroke-width="5"/>
+      
+      <!-- Pie slices -->
+      <path d="M0,0 L120,0 A120,120 0 0,1 60,103.9 z" fill="#4caf50" opacity="0.8"/>
+      <path d="M0,0 L60,103.9 A120,120 0 0,1 -60,103.9 z" fill="#2196f3" opacity="0.8"/>
+      <path d="M0,0 L-60,103.9 A120,120 0 0,1 -120,0 z" fill="#ff9800" opacity="0.8"/>
+      <path d="M0,0 L-120,0 A120,120 0 0,1 0,-120 z" fill="#9c27b0" opacity="0.8"/>
+      <path d="M0,0 L0,-120 A120,120 0 0,1 120,0 z" fill="#f44336" opacity="0.8"/>
+      
+      <!-- Center circle -->
+      <circle cx="0" cy="0" r="40" fill="#ffffff" stroke="#4caf50" stroke-width="3"/>
+      <text x="0" y="10" font-family="Arial" font-size="24" text-anchor="middle" fill="#4caf50">50/50</text>
+    </g>
+    
+    <!-- Dollar signs -->
+    <g transform="translate(-150, -80)">
+      <text x="0" y="0" font-family="Arial" font-size="40" text-anchor="middle" fill="#4caf50">$</text>
+    </g>
+    <g transform="translate(150, -80)">
+      <text x="0" y="0" font-family="Arial" font-size="40" text-anchor="middle" fill="#4caf50">$</text>
+    </g>
+    <g transform="translate(-150, 80)">
+      <text x="0" y="0" font-family="Arial" font-size="40" text-anchor="middle" fill="#4caf50">$</text>
+    </g>
+    <g transform="translate(150, 80)">
+      <text x="0" y="0" font-family="Arial" font-size="40" text-anchor="middle" fill="#4caf50">$</text>
+    </g>
+  </g>
+  
+  <!-- Text at bottom -->
+  <text x="400" y="550" font-family="Arial" font-size="24" text-anchor="middle" fill="#2e5c34">Profit-sharing Models</text>
+</svg>

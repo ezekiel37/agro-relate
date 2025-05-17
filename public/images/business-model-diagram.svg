@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <rect width="900" height="600" fill="#ffffff" rx="10" ry="10"/>
+
+  <!-- Title -->
+  <text x="450" y="80" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle" fill="#333">Business Model</text>
+
+  <!-- Circular diagram -->
+  <g transform="translate(450, 300)">
+    <!-- Green segment (top) -->
+    <path d="M0,0 L0,-120 A120,120 0 0,1 104,-60 z" fill="#8CC63F" />
+    <g transform="translate(52, -90)">
+      <circle cx="0" cy="0" r="12" fill="#8CC63F" />
+      <path d="M-4,-4 L4,4 M-4,4 L4,-4" stroke="white" stroke-width="2" />
+    </g>
+
+    <!-- Red segment (top right) -->
+    <path d="M0,0 L104,-60 A120,120 0 0,1 104,60 z" fill="#E74C3C" />
+    <g transform="translate(104, 0)">
+      <circle cx="0" cy="0" r="12" fill="#E74C3C" />
+      <path d="M-4,0 L4,0 M0,-4 L0,4" stroke="white" stroke-width="2" />
+    </g>
+
+    <!-- Purple segment (bottom right) -->
+    <path d="M0,0 L104,60 A120,120 0 0,1 0,120 z" fill="#9B59B6" />
+    <g transform="translate(52, 90)">
+      <circle cx="0" cy="0" r="12" fill="#9B59B6" />
+      <path d="M-4,0 L4,0 M0,-4 L0,4" stroke="white" stroke-width="2" />
+    </g>
+
+    <!-- Orange segment (bottom) -->
+    <path d="M0,0 L0,120 A120,120 0 0,1 -104,60 z" fill="#E67E22" />
+    <g transform="translate(0, 104)">
+      <circle cx="0" cy="0" r="12" fill="#E67E22" />
+      <path d="M-4,0 L4,0 M0,-4 L0,4" stroke="white" stroke-width="2" />
+    </g>
+
+    <!-- Yellow segment (bottom left) -->
+    <path d="M0,0 L-104,60 A120,120 0 0,1 -104,-60 z" fill="#F1C40F" />
+    <g transform="translate(-52, 90)">
+      <circle cx="0" cy="0" r="12" fill="#F1C40F" />
+      <path d="M-4,0 L4,0 M0,-4 L0,4" stroke="white" stroke-width="2" />
+    </g>
+
+    <!-- Blue segment (top left) -->
+    <path d="M0,0 L-104,-60 A120,120 0 0,1 0,-120 z" fill="#3498DB" />
+    <g transform="translate(-52, -90)">
+      <circle cx="0" cy="0" r="12" fill="#3498DB" />
+      <path d="M-4,0 L4,0 M0,-4 L0,4" stroke="white" stroke-width="2" />
+    </g>
+
+    <!-- Center circle -->
+    <circle cx="0" cy="0" r="30" fill="white" stroke="#ddd" stroke-width="2" />
+
+    <!-- Icons in segments -->
+    <!-- Person icon in green segment -->
+    <g transform="translate(0, -80)">
+      <circle cx="0" cy="0" r="15" fill="white" />
+      <circle cx="0" cy="-7" r="6" fill="#8CC63F" />
+      <path d="M-8,8 C-8,0 8,0 8,8" fill="#8CC63F" stroke="#8CC63F" stroke-width="1" />
+    </g>
+
+    <!-- Link icon in red segment -->
+    <g transform="translate(70, -40)">
+      <circle cx="0" cy="0" r="15" fill="white" />
+      <path d="M-5,-5 L5,5 M-5,5 L5,-5" stroke="#E74C3C" stroke-width="3" />
+    </g>
+
+    <!-- Shopping cart in purple segment -->
+    <g transform="translate(70, 40)">
+      <circle cx="0" cy="0" r="15" fill="white" />
+      <path d="M-7,-5 L-4,-5 L-2,3 L5,3 L7,-3 L-3,-3" fill="none" stroke="#9B59B6" stroke-width="2" />
+      <circle cx="-1" cy="5" r="2" fill="#9B59B6" />
+      <circle cx="4" cy="5" r="2" fill="#9B59B6" />
+    </g>
+
+    <!-- Tie icon in orange segment -->
+    <g transform="translate(0, 80)">
+      <circle cx="0" cy="0" r="15" fill="white" />
+      <path d="M0,-8 L3,-3 L0,8 L-3,-3 Z" fill="#E67E22" />
+    </g>
+
+    <!-- Star icon in yellow segment -->
+    <g transform="translate(-70, 40)">
+      <circle cx="0" cy="0" r="15" fill="white" />
+      <path d="M0,-7 L2,-2 L7,-2 L3,1 L5,6 L0,3 L-5,6 L-3,1 L-7,-2 L-2,-2 Z" fill="#F1C40F" />
+    </g>
+
+    <!-- User icon in blue segment -->
+    <g transform="translate(-70, -40)">
+      <circle cx="0" cy="0" r="15" fill="white" />
+      <circle cx="0" cy="-3" r="5" fill="none" stroke="#3498DB" stroke-width="2" />
+      <path d="M-6,6 C-6,0 6,0 6,6" fill="none" stroke="#3498DB" stroke-width="2" />
+    </g>
+  </g>
+
+  <!-- Text labels -->
+  <!-- Left side labels -->
+  <g transform="translate(120, 250)">
+    <circle cx="0" cy="0" r="8" fill="#8CC63F" />
+    <text x="15" y="5" font-family="Arial" font-size="16" font-weight="bold" fill="#333">Commission</text>
+    <text x="15" y="25" font-family="Arial" font-size="12" fill="#666">Successful funding matches.</text>
+  </g>
+
+  <g transform="translate(120, 310)">
+    <circle cx="0" cy="0" r="8" fill="#3498DB" />
+    <text x="15" y="5" font-family="Arial" font-size="16" font-weight="bold" fill="#333">Premium Features</text>
+    <text x="15" y="25" font-family="Arial" font-size="12" fill="#666">Insurance, analytics for enhanced</text>
+    <text x="15" y="40" font-family="Arial" font-size="12" fill="#666">user experience.</text>
+  </g>
+
+  <g transform="translate(120, 380)">
+    <circle cx="0" cy="0" r="8" fill="#E67E22" />
+    <text x="15" y="5" font-family="Arial" font-size="16" font-weight="bold" fill="#333">Future Revenue</text>
+    <text x="15" y="25" font-family="Arial" font-size="12" fill="#666">Data services, financial tools,</text>
+    <text x="15" y="40" font-family="Arial" font-size="12" fill="#666">partner integration.</text>
+  </g>
+
+  <!-- Right side labels -->
+  <g transform="translate(680, 250)">
+    <circle cx="0" cy="0" r="8" fill="#F1C40F" />
+    <text x="-15" y="5" font-family="Arial" font-size="16" font-weight="bold" text-anchor="end" fill="#333">Commission</text>
+    <text x="-15" y="25" font-family="Arial" font-size="12" text-anchor="end" fill="#666">Successful funding matches.</text>
+  </g>
+
+  <g transform="translate(680, 310)">
+    <circle cx="0" cy="0" r="8" fill="#9B59B6" />
+    <text x="-15" y="5" font-family="Arial" font-size="16" font-weight="bold" text-anchor="end" fill="#333">Premium Features</text>
+    <text x="-15" y="25" font-family="Arial" font-size="12" text-anchor="end" fill="#666">Insurance, analytics for enhanced</text>
+    <text x="-15" y="40" font-family="Arial" font-size="12" text-anchor="end" fill="#666">user experience.</text>
+  </g>
+
+  <g transform="translate(680, 380)">
+    <circle cx="0" cy="0" r="8" fill="#E74C3C" />
+    <text x="-15" y="5" font-family="Arial" font-size="16" font-weight="bold" text-anchor="end" fill="#333">Future Revenue</text>
+    <text x="-15" y="25" font-family="Arial" font-size="12" text-anchor="end" fill="#666">Data services, financial tools,</text>
+    <text x="-15" y="40" font-family="Arial" font-size="12" text-anchor="end" fill="#666">partner integration.</text>
+  </g>
+</svg>

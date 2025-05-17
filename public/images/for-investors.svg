@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Background -->
+  <circle cx="100" cy="100" r="80" fill="#f9f9e0" opacity="0.3"/>
+  
+  <!-- Green field/crop view from above -->
+  <g transform="translate(100, 100) scale(0.7)">
+    <circle cx="0" cy="0" r="70" fill="#8CC63F" opacity="0.7"/>
+    
+    <!-- Field patterns -->
+    <path d="M-60,-60 L60,60 M-40,-60 L60,40 M-20,-60 L60,20 M0,-60 L60,0 M20,-60 L60,-20 M40,-60 L60,-40 M-60,-40 L40,60 M-60,-20 L20,60 M-60,0 L0,60 M-60,20 L-20,60 M-60,40 L-40,60" 
+          stroke="#0A4A2F" stroke-width="2" opacity="0.5"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="180" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">For Investors</text>
+</svg>

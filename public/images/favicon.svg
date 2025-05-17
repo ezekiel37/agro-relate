@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Circle background -->
+  <circle cx="32" cy="32" r="30" fill="white" stroke="#0A4A2F" stroke-width="2"/>
+  
+  <!-- Leaf -->
+  <path d="M16,32 C16,20 26,16 36,20 C46,24 48,32 46,40 C44,48 36,52 28,50 C20,48 16,44 16,32 Z" fill="#0A4A2F"/>
+  <path d="M28,28 C32,24 36,22 42,26" fill="none" stroke="white" stroke-width="2"/>
+  
+  <!-- Growth chart -->
+  <path d="M28,32 L32,28 L36,30 L40,26 L44,22" fill="none" stroke="#8CC63F" stroke-width="2"/>
+  <path d="M28,32 L28,36 L40,36" fill="none" stroke="#8CC63F" stroke-width="2"/>
+  
+  <!-- House icon -->
+  <path d="M30,36 L30,40 L34,40 L34,36 Z" fill="#8CC63F"/>
+  <path d="M28,36 L32,32 L36,36" fill="#8CC63F"/>
+</svg>
