@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface CardProps {
@@ -8,28 +7,28 @@ interface CardProps {
 }
 
 const ProblemCard: React.FC<CardProps> = ({ title, description, imageSrc }) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+  <div className="bg-white rounded-lg h-[420px] overflow-hidden shadow-md w-full hover:shadow-lg transition-shadow">
     {imageSrc && (
-      <div className="h-48 bg-gray-200 overflow-hidden">
+      <div className="h-64  bg-gray-200 overflow-hidden">
         <img src={imageSrc || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
       </div>
     )}
-    <div className="p-6">
-      <h3 className="text-xl font-bold text-agrogreen-dark mb-3">{title}</h3>
+    <div className="p-6 mt-4">
+      <h3 className="text-xl font-bold text-[#000000] mb-3">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
   </div>
 );
 
 const SolutionCard: React.FC<CardProps> = ({ title, description, imageSrc }) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+  <div className="bg-white rounded-lg h-[420px] overflow-hidden w-full shadow-md hover:shadow-lg transition-shadow">
     {imageSrc && (
-      <div className="h-48 bg-gray-200 overflow-hidden">
+      <div className="h-64 bg-gray-200 overflow-hidden">
         <img src={imageSrc || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
       </div>
     )}
-    <div className="p-6">
-      <h3 className="text-xl font-bold text-agrogreen mb-3">{title}</h3>
+    <div className="p-6 mt-4">
+      <h3 className="text-xl font-bold text-[#000000] mb-3">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
   </div>
@@ -38,13 +37,13 @@ const SolutionCard: React.FC<CardProps> = ({ title, description, imageSrc }) => 
 const ProblemSolution: React.FC = () => {
   return (
     <>
-      <section className="py-16 md:py-24  text-white" id="problem">
+      <section className="py-16 md:py-24 text-white" id="problem">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl text-agrogreen-dark md:text-4xl font-bold text-center mb-16">
             The Problem:
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-28">
             <ProblemCard
               title="Lack of Funding"
               description="70% of smallholder farmers in Nigeria lack access to affordable, timely funding."
@@ -72,7 +71,7 @@ const ProblemSolution: React.FC = () => {
             The Solution:
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-28">
             <SolutionCard
               title="Vetting System"
               description="KYC, location verification & farmer's records."

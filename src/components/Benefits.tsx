@@ -29,11 +29,11 @@ const Benefits: React.FC = () => {
           </div>
 
           {/* Right side - Image */}
-          <div className="flex justify-center">
+          <div className="flex w-full justify-center">
             <img
-              src="/images/kenyanfood.png"
+              src="/images/smilefull.jpg"
               alt="Modern greenhouse with farmers working"
-              className="w-full max-w-lg rounded-lg"
+              className=" rounded-lg"
             />
           </div>
         </div>

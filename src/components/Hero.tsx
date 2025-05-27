@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
             Profiting Impactful Investors.
           </h1>
 
-          <div className="space-y-4 mb-12 text-white text-lg md:text-xl max-w-3xl mx-auto">
+          <div className="space-y-4 mb-12 text-white text-lg md:text-xl max-w-3xl mx-auto opacity-70">
             <p>
               Bridging farmers & investors for scalable agribusiness in Nigeria's undercapitalized agriculture sector.
             </p>
