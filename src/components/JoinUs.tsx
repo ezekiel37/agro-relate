@@ -5,7 +5,11 @@ import { Button } from "@/components/ui/button";
 const JoinUs: React.FC = () => {
   return (
     <section className="py-16 md:py-24 bg-agrogreen-dark text-white bg-cover bg-center"
-      style={{ backgroundImage: "url('/lovable-uploads/join-us-background.jpg')" }}
+    style={{ 
+      backgroundImage: "url('/images/relate.png')",
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+    }}
       id="join-us">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-8">

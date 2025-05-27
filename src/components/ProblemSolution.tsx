@@ -38,9 +38,9 @@ const SolutionCard: React.FC<CardProps> = ({ title, description, imageSrc }) => 
 const ProblemSolution: React.FC = () => {
   return (
     <>
-      <section className="py-16 md:py-24 bg-agrogreen-dark text-white" id="problem">
+      <section className="py-16 md:py-24  text-white" id="problem">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          <h2 className="text-3xl text-agrogreen-dark md:text-4xl font-bold text-center mb-16">
             The Problem:
           </h2>
 
@@ -66,9 +66,9 @@ const ProblemSolution: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-agrogreen-dark text-white" id="solution">
+      <section className="py-16 md:py-24  text-white" id="solution">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          <h2 className="text-3xl text-agrogreen-dark md:text-4xl font-bold text-center mb-16">
             The Solution:
           </h2>
 
