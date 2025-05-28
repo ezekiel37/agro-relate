@@ -34,7 +34,7 @@ const BusinessModel: React.FC = () => {
         <div className="max-w-7xl mx-auto relative">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
             {/* Left side segments */}
-            <div className="space-y-12 lg:space-y-16 self-center">
+            <div className="space-y-12 lg:space-y-16 pl-24 md:pl-0 self-center">
               <BusinessSegment
                 title="Commission"
                 description="Successful funding matches."

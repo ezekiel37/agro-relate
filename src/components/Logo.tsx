@@ -6,9 +6,9 @@ const Logo: React.FC = () => {
   return (
     <Link to="/" className="flex items-center no-underline">
       <img
-        src="/images/agrorelate-logo.svg"
+        src="/images/whitelogoremove.png"
         alt="AgroRelate Logo"
-        className="h-14 md:h-16"
+        className="h-16 md:h-16"
       />
     </Link>
   );
