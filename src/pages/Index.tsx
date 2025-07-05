@@ -9,6 +9,10 @@ import ProblemSolution from '@/components/ProblemSolution';
 import Benefits from '@/components/Benefits';
 import JoinUs from '@/components/JoinUs';
 import Footer from '@/components/Footer';
+import Problem from '@/components/Problem';
+import Solution from '@/components/Solution';
+import FAQSection from '@/components/FAQSection';
+import KeyConcernsSection from '@/components/KeyConcernsSection';
 
 const Index = () => {
   return (
@@ -16,11 +20,13 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <ProblemSolution />
-        <Benefits />
-        <BusinessModel />
-        <KeyConcerns />
-        <Traction />     
+       <Problem/>
+       <Solution />
+       <Benefits />
+       <BusinessModel />
+          <KeyConcernsSection />
+       <FAQSection />
+    
         <JoinUs />
       </main>
       <Footer />
