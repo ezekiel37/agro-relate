@@ -15,7 +15,7 @@ const BusinessSegment: React.FC<BusinessSegmentProps> = ({
     <div className="flex items-start gap-4 mb-8">
       <div className={`w-4 h-4 rounded-full ${color} flex-shrink-0 mt-1.5`}></div>
       <div>
-        <h4 className="font-bold text-lg text-gray-800 mb-2">{title}</h4>
+        <h4 className="font-600 text-lg text-gray-800 mb-2">{title}</h4>
         <p className="text-gray-600 text-sm max-w-[280px]">{description}</p>
       </div>
     </div>
@@ -26,7 +26,7 @@ const BusinessModel: React.FC = () => {
   return (
     <section className="py-16 md:py-24 bg-white" id="business-model">
       <div className="container  mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-600 text-black/80 text-center mb-16">
           Business Model
         </h2>
 

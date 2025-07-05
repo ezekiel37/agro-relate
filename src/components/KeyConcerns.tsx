@@ -7,7 +7,7 @@ interface ConcernCardProps {
 
 const ConcernCard: React.FC<ConcernCardProps> = ({ title, description }) => (
   <div className="text-left">
-    <h3 className="text-xl font-bold text-[#000000] mb-3">{title}</h3>
+          <h3 className="text-xl font-600 text-[#000000] mb-3">{title}</h3>
     <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
   </div>
 );
@@ -18,7 +18,7 @@ const KeyConcerns: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-16">
           <div className="lg:col-span-1">
-            <h2 className="text-3xl md:text-4xl text-center font-bold text-[#000000] mb-12">
+            <h2 className="text-3xl md:text-4xl text-center font-600 text-[#000000] mb-12">
               Addressing Key<br />Concerns
             </h2>
           </div>

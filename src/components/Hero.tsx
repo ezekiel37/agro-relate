@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
         className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-start justify-start h-full pt-[200px]"
       >
         <div className="max-w-2xl">
-          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-8 leading-tight text-left">
+          <h1 className="text-3xl lg:text-4xl font-600 text-white mb-8 leading-tight text-left">
             Empowering Nigerian Farmers.<br />
             Profiting Impactful Investors.
           </h1>

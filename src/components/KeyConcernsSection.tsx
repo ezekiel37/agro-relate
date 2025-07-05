@@ -34,18 +34,18 @@ const KeyConcernsSection = () => {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Title and Concerns */}
             <div>
-              <h2 className="text-4xl pl-6 font-bold text-foreground mb-10">
-                Addressing Key Concerns
-              </h2>
+                      <h2 className="text-4xl pl-2 font-600 text-black/80 mb-10">
+          Addressing Key Concerns
+        </h2>
               <div className="flex flex-col">
                 {concerns.map((concern, index) => (
                   <motion.div
                     key={index}
-                    className="flex gap-4 bg-white rounded-2xl p-6 mb-6 last:mb-0 items-start"
+                    className="flex gap-16 rounded-2xl p-6 mb-6 last:mb-0 items-start"
                     custom={index}
                     initial="hidden"
                     whileInView="visible"

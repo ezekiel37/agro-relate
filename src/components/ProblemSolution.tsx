@@ -14,7 +14,7 @@ const ProblemCard: React.FC<CardProps> = ({ title, description, imageSrc }) => (
       </div>
     )}
     <div className="p-6 mt-4">
-      <h3 className="text-xl font-bold text-[#000000] mb-3">{title}</h3>
+      <h3 className="text-xl font-600 text-[#000000] mb-3">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
   </div>
@@ -28,7 +28,7 @@ const SolutionCard: React.FC<CardProps> = ({ title, description, imageSrc }) => 
       </div>
     )}
     <div className="p-6 mt-4">
-      <h3 className="text-xl font-bold text-[#000000] mb-3">{title}</h3>
+      <h3 className="text-xl font-600 text-[#000000] mb-3">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
   </div>
@@ -39,7 +39,7 @@ const ProblemSolution: React.FC = () => {
     <>
       <section className="py-16 md:py-24 text-white" id="problem">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl text-agrogreen-dark md:text-4xl font-bold text-center mb-16">
+          <h2 className="text-3xl text-agrogreen-dark md:text-4xl font-600 text-center mb-16">
             The Problem:
           </h2>
 
@@ -67,7 +67,7 @@ const ProblemSolution: React.FC = () => {
 
       <section className="py-16 md:py-24  text-white" id="solution">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl text-agrogreen-dark md:text-4xl font-bold text-center mb-16">
+          <h2 className="text-3xl text-agrogreen-dark md:text-4xl font-600 text-center mb-16">
             The Solution:
           </h2>
 

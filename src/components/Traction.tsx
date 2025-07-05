@@ -16,7 +16,7 @@ const Milestone: React.FC<MilestoneProps> = ({
   <div className="relative flex items-center mb-8 md:mb-16">
     {/* Milestone circle */}
     <div className="absolute left-1/2 -translate-x-1/2 z-20">
-      <div className={`flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full ${isCompleted ? 'bg-[#2B4D17]' : 'bg-gray-800'} text-white font-bold text-lg md:text-xl transition-colors`}>
+      <div className={`flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full ${isCompleted ? 'bg-[#2B4D17]' : 'bg-gray-800'} text-white font-600 text-lg md:text-xl transition-colors`}>
         {number}
       </div>
     </div>
@@ -50,7 +50,7 @@ const Traction: React.FC = () => {
   return (
     <section className="py-12 md:py-24 bg-gray-50" id="traction">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-800 text-center mb-12 md:mb-16">
+        <h2 className="text-2xl md:text-4xl font-600 text-gray-800 text-center mb-12 md:mb-16">
           Traction & Next Steps
         </h2>
 

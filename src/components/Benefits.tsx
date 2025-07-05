@@ -43,7 +43,7 @@ const BenefitCard: React.FC<{ icon: string; title: string; description: string; 
       <img src={icon} alt="icon" className="w-12 h-12" />
     </div>
     <div>
-      <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-3 leading-tight">{title}</h3>
+                  <h3 className="text-lg md:text-xl font-600 text-gray-800 mb-3 leading-tight">{title}</h3>
       <p className="text-gray-600 text-sm md:text-base leading-relaxed">{description}</p>
       {subtitle && <p className="text-sm text-gray-500 mt-2">{subtitle}</p>}
     </div>
@@ -57,7 +57,7 @@ const Benefits: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Title and Cards */}
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight mb-10">
+            <h2 className="text-3xl md:text-4xl font-600 pl-6 text-black/80 leading-tight mb-10">
               Why Choose Agro-Relate as a Farmer & as an Investor?
             </h2>
             <div className="flex flex-col">

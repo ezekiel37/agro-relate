@@ -44,7 +44,7 @@ const Solution: React.FC = () => (
             />
             <div className="absolute inset-0" />
             {/* Title inside image, top-left */}
-            <h2 className="absolute top-8 left-4 sm:top-16 sm:left-8 md:top-36 md:left-12 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white/80 text-left z-20">
+            <h2 className="absolute top-8 left-4 sm:top-16 sm:left-8 md:top-36 md:left-12 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-600 text-white/80 text-left z-20">
               The Solution
             </h2>
           </div>
@@ -70,7 +70,7 @@ const Solution: React.FC = () => (
                     </span>
                   </span>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2 text-center">{item.title}</h3>
+                <h3 className="text-base sm:text-lg font-600 text-gray-900 mb-1 sm:mb-2 text-center">{item.title}</h3>
                 <p className="text-xs sm:text-sm text-gray-500 text-center">{item.subtitle}</p>
               </motion.div>
             ))}

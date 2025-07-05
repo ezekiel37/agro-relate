@@ -33,7 +33,7 @@ const FAQSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">FAQs</h2>
+            <h2 className="text-4xl md:text-5xl font-600 text-black/80 mb-4">FAQs</h2>
           </div>
           <Accordion type="single" collapsible className="space-y-0" onValueChange={setOpenIndex}>
             {faqs.map((faq, index) => (
@@ -42,7 +42,7 @@ const FAQSection = () => {
                 value={`item-${index}`}
                 className="border-b border-border px-6"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold py-6 hover:no-underline flex items-center justify-between bg-transparent border-none rounded-none outline-none focus:outline-none">
+                <AccordionTrigger className="text-left text-lg font-semibold py-6 hover:no-underline flex items-center justify-between bg-transparent border-none rounded-none outline-none focus:outline-none text-black/80">
                   <span className="flex-1 text-left">{faq.question}</span>
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">

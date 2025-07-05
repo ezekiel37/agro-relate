@@ -9,14 +9,14 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="font-bold text-agrogreen-dark text-xl mb-4">AgroRelate</h3>
+            <h3 className="font-600 text-agrogreen-dark text-xl mb-4">AgroRelate</h3>
             <p className="text-gray-600 text-sm">
               Connecting Farmers with transparent and profitable financing
             </p>
           </div>
 
           <div>
-            <h3 className="font-bold text-agrogreen-dark mb-4">Quick Links</h3>
+            <h3 className="font-600 text-agrogreen-dark mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="#" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">About Us</Link></li>
               <li><Link to="#" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">For Farmers</Link></li>
@@ -26,13 +26,13 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="font-bold text-agrogreen-dark mb-4">Contact</h3>
+            <h3 className="font-600 text-agrogreen-dark mb-4">Contact</h3>
             <p className="text-gray-600 text-sm mb-2">Contact us: agrorelate93@gmail.com</p>
             <p className="text-gray-600 text-sm">@ +123 456 789</p>
           </div>
 
           <div>
-            <h3 className="font-bold text-agrogreen-dark mb-4">Follow Us</h3>
+            <h3 className="font-600 text-agrogreen-dark mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <Link to="#" className="text-gray-600 hover:text-agrogreen transition-colors">
                 <span className="sr-only">Twitter</span>
