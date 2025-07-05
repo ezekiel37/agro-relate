@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-20 py-4 w-full bg-white/90 backdrop-blur-sm">
+    <nav className="absolute top-0 left-0 right-0 z-20 py-4 w-full bg-white backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center">
           <Logo />
@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center gap-32">
           <Link to="/" className="text-gray-800 hover:text-gray-600 font-medium">Home</Link>
           <Link to="#" className="text-gray-500 hover:text-gray-700 font-medium">Contact</Link>
           <Link to="#" className="text-gray-500 hover:text-gray-700 font-medium">Gallery</Link>
