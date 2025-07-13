@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
               Get Started As a Farmer
             </Button>
             <Button
-              className="bg-gradient-to-r from-[#142600] to-[#4A8C00] text-white border border-white text-lg py-6 px-8 font-medium rounded-md transition-colors shadow-lg"
+              className="bg-gradient-to-r from-[#142600] to-[#4A8C00] text-white border border-white text-lg py-6 pl-8 pr-[68px] font-medium rounded-md transition-colors shadow-lg"
             >
               Invest in Agriculture
             </Button>
