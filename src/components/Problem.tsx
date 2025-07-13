@@ -31,8 +31,8 @@ const cardVariants = {
 };
 
 const Problem: React.FC = () => (
-  <section className="relative w-full min-h-[750px] py-16 bg-gradient-to-b from-white to-custom-green overflow-hidden">
-    <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 flex flex-col items-center">
+  <section className="relative w-full h-[1000px] md:h-[800px] py-16 bg-gradient-to-b from-white to-custom-green overflow-hidden">
+    <div className=" container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 flex flex-col items-center">
       {/* Image with spacing */}
       <div className="relative w-full flex justify-center mb-0 pb-0" style={{ zIndex: 10 }}>
         <div className="w-full max-w-5xl px-0 sm:px-2 md:px-8 lg:px-16">
@@ -50,13 +50,13 @@ const Problem: React.FC = () => (
           </div>
         </div>
         {/* Cards overlayed and extending out of the image */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-full max-w-5xl px-2 sm:px-4 md:px-8 lg:px-32"
+        <div className="absolute top-[100px] md:top-[250px] left-1/2 transform -translate-x-1/2 w-full max-w-5xl px-2 sm:px-8 md:px-8 lg:px-32"
              style={{ bottom: '-120px' }}>
           <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 justify-center items-stretch w-full">
             {problems.map((item, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col items-center w-full max-w-full sm:max-w-sm md:max-w-xs h-[280px] sm:h-[320px] md:h-[340px] border border-gray-100"
+                className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col items-center w-full max-w-full sm:max-w-sm md:max-w-xs h-[250px] sm:h-[320px] md:h-[340px] border border-gray-100"
                 custom={idx}
                 initial="hidden"
                 whileInView="visible"

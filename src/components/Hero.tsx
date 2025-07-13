@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 pt-[100px] justify-start items-start">
             <Button
-              className="bg-white text-gray-800 hover:bg-gray-100 text-lg py-6 px-8 font-medium rounded-md transition-colors shadow-lg"
+              className="bg-white text-gray-800 hover:bg-gray-100 text-lg py-[25px] px-8 font-medium rounded-md transition-colors shadow-lg"
             >
               Get Started As a Farmer
             </Button>

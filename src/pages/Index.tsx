@@ -20,7 +20,10 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-       <Problem/>
+       <div>
+        <Problem/>
+        </div>
+     
        <Solution />
        <Benefits />
        <BusinessModel />
