@@ -50,7 +50,7 @@ const Solution: React.FC = () => (
           </div>
         </div>
         {/* Cards overlayed and extending out of the image */}
-        <div className="absolute top-[100px] md:top-[250px] left-[185px] md:left-1/2 transform -translate-x-1/2 w-full max-w-5xl px-2 sm:px-4 md:px-8 lg:px-32"
+        <div className="absolute top-[100px] md:top-[250px] left-[47.8%] transform -translate-x-1/2 w-full max-w-5xl px-2 sm:px-4 md:px-8 lg:px-32"
              style={{ bottom: '-120px' }}>
           <div className="flex flex-col md:flex-row gap-4 sm:gap-8 md:gap-10 justify-center items-stretch w-full">
             {solutions.map((item, idx) => (
