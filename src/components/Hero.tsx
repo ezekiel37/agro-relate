@@ -1,6 +1,7 @@
 // Hero Component
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
@@ -38,14 +39,16 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 pt-[100px] justify-start items-start">
             <Button
+              asChild
               className="bg-white text-gray-800 hover:bg-gray-100 text-lg py-[25px] px-8 font-medium rounded-md transition-colors shadow-lg"
             >
-              Get Started As a Farmer
+              <Link to="/welcome">Get Started</Link>
             </Button>
             <Button
+              asChild
               className="bg-gradient-to-r from-[#142600] to-[#4A8C00] text-white border border-white text-lg py-6 pl-8 pr-[68px] font-medium rounded-md transition-colors shadow-lg"
             >
-              Invest in Agriculture
+              <Link to="/signup/investor">Invest in Agriculture</Link>
             </Button>
           </div>
         </div>
