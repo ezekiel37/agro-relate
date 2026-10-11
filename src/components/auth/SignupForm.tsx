@@ -1,8 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
 import { SignupValues, signupSchema } from "@/lib/validation";
 import { ApiError } from "@/lib/api";
 import FieldError from "./FieldError";
@@ -106,14 +105,14 @@ const SignupForm: React.FC<SignupFormProps> = ({ idPrefix, onSubmit }) => {
 
       <FieldError message={errors.root?.message} />
 
-      <Button
+      <LoadingButton
         type="submit"
-        disabled={isSubmitting}
+        loading={isSubmitting}
+        loadingText="Creating account..."
         className="mt-2 w-full bg-[#1E3C14] text-white hover:bg-[#162B0E]"
       >
-        {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-        {isSubmitting ? "Creating account..." : "Sign Up"}
-      </Button>
+        Sign Up
+      </LoadingButton>
     </form>
   );
 };

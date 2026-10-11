@@ -1,8 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
 import { Textarea } from "@/components/ui/textarea";
 import FieldError from "@/components/auth/FieldError";
 import TextField from "@/components/auth/TextField";
@@ -144,14 +143,15 @@ const ProfileForm: React.FC<{ profile: Profile | null }> = ({ profile }) => {
         />
 
         <div className="flex justify-end">
-          <Button
+          <LoadingButton
             type="submit"
             className={primaryButton}
-            disabled={save.isPending || (!!profile && !isDirty)}
+            loading={save.isPending}
+            loadingText={profile ? "Saving..." : "Creating..."}
+            disabled={!!profile && !isDirty}
           >
-            {save.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
             {profile ? "Save changes" : "Create profile"}
-          </Button>
+          </LoadingButton>
         </div>
       </form>
     </Card>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
 import type { ConnectionRequest } from "@/lib/api";
 import { useCancelRequest, useRespondToRequest } from "@/hooks/use-dashboard";
 import {
@@ -22,6 +22,7 @@ const RequestCard: React.FC<{ request: ConnectionRequest; direction: "sent" | "r
   const cancel = useCancelRequest();
   const other = direction === "received" ? request.fromUser : request.toUser;
   const busy = respond.isPending || cancel.isPending;
+  const responding = respond.isPending ? respond.variables?.status : undefined;
 
   return (
     <div className="flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-4 sm:flex-row sm:items-start">
@@ -51,32 +52,37 @@ const RequestCard: React.FC<{ request: ConnectionRequest; direction: "sent" | "r
         <div className="flex gap-2 sm:flex-col">
           {direction === "received" ? (
             <>
-              <Button
+              <LoadingButton
                 size="sm"
                 className={primaryButton}
+                loading={responding === "accepted"}
+                loadingText="Accepting..."
                 disabled={busy}
                 onClick={() => respond.mutate({ id: request.id, status: "accepted" })}
               >
                 Accept
-              </Button>
-              <Button
+              </LoadingButton>
+              <LoadingButton
                 size="sm"
                 variant="outline"
+                loading={responding === "rejected"}
+                loadingText="Declining..."
                 disabled={busy}
                 onClick={() => respond.mutate({ id: request.id, status: "rejected" })}
               >
                 Decline
-              </Button>
+              </LoadingButton>
             </>
           ) : (
-            <Button
+            <LoadingButton
               size="sm"
               variant="outline"
-              disabled={busy}
+              loading={cancel.isPending}
+              loadingText="Cancelling..."
               onClick={() => cancel.mutate(request.id)}
             >
               Cancel request
-            </Button>
+            </LoadingButton>
           )}
         </div>
       ) : null}

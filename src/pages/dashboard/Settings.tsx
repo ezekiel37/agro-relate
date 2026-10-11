@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
 import FieldError from "@/components/auth/FieldError";
 import PasswordInput from "@/components/auth/PasswordInput";
 import PasswordStrength from "@/components/auth/PasswordStrength";
@@ -71,9 +72,15 @@ const AccountForm: React.FC = () => {
         />
         <FieldError message={errors.root?.message} />
         <div className="flex justify-end">
-          <Button type="submit" className={primaryButton} disabled={isSubmitting || !isDirty}>
-            {isSubmitting ? "Saving..." : "Save"}
-          </Button>
+          <LoadingButton
+            type="submit"
+            className={primaryButton}
+            loading={isSubmitting}
+            loadingText="Saving..."
+            disabled={!isDirty}
+          >
+            Save
+          </LoadingButton>
         </div>
       </form>
     </Card>
@@ -140,9 +147,14 @@ const PasswordForm: React.FC = () => {
         <PasswordStrength password={watch("password") ?? ""} />
         <FieldError message={errors.root?.message} />
         <div className="flex justify-end">
-          <Button type="submit" className={primaryButton} disabled={isSubmitting}>
-            {isSubmitting ? "Updating..." : "Update password"}
-          </Button>
+          <LoadingButton
+            type="submit"
+            className={primaryButton}
+            loading={isSubmitting}
+            loadingText="Updating..."
+          >
+            Update password
+          </LoadingButton>
         </div>
       </form>
     </Card>

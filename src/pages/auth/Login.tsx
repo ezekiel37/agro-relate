@@ -2,13 +2,12 @@ import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import AuthShell from "@/components/auth/AuthShell";
 import FieldError from "@/components/auth/FieldError";
 import PasswordInput from "@/components/auth/PasswordInput";
 import TextField from "@/components/auth/TextField";
-import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
 import { useAuth } from "@/context/AuthContext";
 import { ApiError, login } from "@/lib/api";
 import { LoginValues, loginSchema } from "@/lib/validation";
@@ -75,14 +74,14 @@ const Login: React.FC = () => {
 
             <FieldError message={errors.root?.message} />
 
-            <Button
+            <LoadingButton
               type="submit"
-              disabled={isSubmitting}
+              loading={isSubmitting}
+              loadingText="Logging in..."
               className="w-full bg-[#1E3C14] text-white hover:bg-[#162B0E]"
             >
-              {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-              {isSubmitting ? "Logging in..." : "Login"}
-            </Button>
+              Login
+            </LoadingButton>
           </form>
 
           <p className="mt-4 text-center text-xs text-gray-500">
