@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Serve the SPA for every path so React Router handles client-side routes
+# (otherwise refreshing /login or /signup/farmer returns Netlify's 404).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

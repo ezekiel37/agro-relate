@@ -1,11 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 import AuthShell from "@/components/auth/AuthShell";
+import FieldError from "@/components/auth/FieldError";
 import PasswordInput from "@/components/auth/PasswordInput";
-import { Input } from "@/components/ui/input";
+import TextField from "@/components/auth/TextField";
 import { Button } from "@/components/ui/button";
+import { ApiError, login, setToken } from "@/lib/api";
+import { LoginValues, loginSchema } from "@/lib/validation";
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<LoginValues>({ resolver: zodResolver(loginSchema), mode: "onTouched" });
+
+  const onSubmit = async (values: LoginValues) => {
+    try {
+      const { token, user } = await login(values);
+      setToken(token);
+      toast.success(`Welcome back, ${user.name}!`);
+      navigate("/");
+    } catch (err) {
+      setError("root", {
+        message:
+          err instanceof ApiError ? err.message : "Something went wrong. Please try again.",
+      });
+    }
+  };
+
   return (
     <AuthShell backTo="/welcome">
       <div className="w-full max-w-[420px]">
@@ -14,23 +43,24 @@ const Login: React.FC = () => {
             Welcome back!
           </h1>
 
-          <form className="space-y-4">
-            <div className="space-y-2">
-              <label htmlFor="login-email" className="text-sm text-gray-700">
-                Email Address
-              </label>
-              <Input
-                id="login-email"
-                type="email"
-                placeholder="xyz@gmail.com"
-                className="h-10 rounded-md border-gray-300 text-sm placeholder:text-gray-400 focus-visible:ring-0 focus-visible:border-gray-400"
-              />
-            </div>
+          <form className="space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate>
+            <TextField
+              id="login-email"
+              label="Email Address"
+              type="email"
+              placeholder="xyz@gmail.com"
+              autoComplete="email"
+              error={errors.email?.message}
+              {...register("email")}
+            />
 
             <PasswordInput
               id="login-password"
               label="Password"
               placeholder="Enter your password"
+              autoComplete="current-password"
+              error={errors.password?.message}
+              {...register("password")}
             />
 
             <div className="text-right">
@@ -39,8 +69,15 @@ const Login: React.FC = () => {
               </Link>
             </div>
 
-            <Button className="w-full bg-[#1E3C14] text-white hover:bg-[#162B0E]">
-              Login
+            <FieldError message={errors.root?.message} />
+
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-[#1E3C14] text-white hover:bg-[#162B0E]"
+            >
+              {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+              {isSubmitting ? "Logging in..." : "Login"}
             </Button>
           </form>
 

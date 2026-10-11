@@ -37,7 +37,7 @@ const AuthShell: React.FC<AuthShellProps> = ({
       {backTo ? (
         <Link
           to={backTo}
-          className="absolute left-6 top-6 inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700"
+          className="absolute left-6 top-6 z-20 inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700"
         >
           <ArrowLeft className="h-4 w-4" />
           {backLabel}
@@ -45,7 +45,7 @@ const AuthShell: React.FC<AuthShellProps> = ({
       ) : null}
 
       {topLabel ? (
-        <div className="absolute left-6 top-6 text-sm text-gray-400">
+        <div className={cn("absolute right-6 top-6 text-sm text-gray-400", !backTo && "left-6 right-auto")}>
           {topLabel}
         </div>
       ) : null}
