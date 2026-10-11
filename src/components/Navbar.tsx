@@ -2,10 +2,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
+import { useAuth } from "@/context/AuthContext";
 import { Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { status } = useAuth();
+  const cta =
+    status === "authenticated"
+      ? { to: "/dashboard", label: "Dashboard" }
+      : { to: "/welcome", label: "Get Started" };
   const navItems = [
     { label: "About", to: "/about" },
     { label: "How it Works", to: "/how-it-works" },
@@ -35,10 +41,10 @@ const Navbar: React.FC = () => {
 
         <div className="hidden md:flex">
           <Link
-            to="/welcome"
+            to={cta.to}
             className="rounded-full bg-[#1E3C14] px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#162B0E] transition-colors"
           >
-            Get Started
+            {cta.label}
           </Link>
         </div>
 
@@ -67,11 +73,11 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <Link
-              to="/welcome"
+              to={cta.to}
               className="mt-2 inline-flex w-fit rounded-full bg-[#1E3C14] px-6 py-2 text-sm font-semibold text-white shadow-sm"
               onClick={() => setIsOpen(false)}
             >
-              Get Started
+              {cta.label}
             </Link>
           </div>
         </div>

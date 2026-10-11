@@ -1,11 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import AuthShell from "@/components/auth/AuthShell";
-import PasswordInput from "@/components/auth/PasswordInput";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import SignupForm from "@/components/auth/SignupForm";
+import { useAuth } from "@/context/AuthContext";
+import { register } from "@/lib/api";
+import { SignupValues } from "@/lib/validation";
 
 const FarmerSignup: React.FC = () => {
+  const navigate = useNavigate();
+  const { signIn } = useAuth();
+
+  const handleSignup = async ({ name, email, password }: SignupValues) => {
+    const { token, user } = await register({ name, email, password, role: "farmer" });
+    signIn(token, user);
+    toast.success("Account created. Next, set up your profile so others can find you.");
+    navigate("/dashboard/profile", { replace: true });
+  };
+
   return (
     <AuthShell backTo="/welcome">
       <div className="w-full max-w-[460px]">
@@ -20,67 +32,7 @@ const FarmerSignup: React.FC = () => {
             Sign Up
           </h2>
 
-          <form className="space-y-4">
-            <div className="space-y-2">
-              <label htmlFor="farmer-fullname" className="text-sm text-gray-700">
-                Full Name
-              </label>
-              <Input
-                id="farmer-fullname"
-                placeholder="Enter your first and last name"
-                className="h-10 rounded-md border-gray-300 text-sm placeholder:text-gray-400 focus-visible:ring-0 focus-visible:border-gray-400"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="farmer-email" className="text-sm text-gray-700">
-                Email Address
-              </label>
-              <Input
-                id="farmer-email"
-                type="email"
-                placeholder="Enter your email address"
-                className="h-10 rounded-md border-gray-300 text-sm placeholder:text-gray-400 focus-visible:ring-0 focus-visible:border-gray-400"
-              />
-            </div>
-
-            <PasswordInput
-              id="farmer-password"
-              label="Password"
-              placeholder="Create a password"
-            />
-
-            <PasswordInput
-              id="farmer-confirm-password"
-              label="Confirm Password"
-              placeholder="Confirm your password"
-            />
-
-            <div className="space-y-2">
-              <span className="text-[11px] font-semibold text-gray-500">
-                Password Strength
-              </span>
-              <div className="h-0.5 w-full rounded-full bg-gray-200">
-                <div className="h-0.5 w-20 rounded-full bg-gray-800" />
-              </div>
-            </div>
-
-            <label className="flex items-start gap-2 text-[11px] text-gray-500">
-              <input
-                type="checkbox"
-                className="mt-0.5 h-3 w-3 rounded border-gray-300 text-agrogreen-dark"
-              />
-              <span>
-                I agree with the{" "}
-                <span className="text-gray-700">Terms of Service</span> and{" "}
-                <span className="text-gray-700">Privacy Policy</span>
-              </span>
-            </label>
-
-            <Button className="mt-2 w-full bg-[#1E3C14] text-white hover:bg-[#162B0E]">
-              Sign Up
-            </Button>
-          </form>
+          <SignupForm idPrefix="farmer" onSubmit={handleSignup} />
 
           <p className="mt-4 text-center text-xs text-gray-500">
             Already have an account?

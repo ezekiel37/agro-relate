@@ -121,7 +121,6 @@ const About: React.FC = () => {
             title="Subscribe to our newsletter"
             description="Stay informed with platform updates, success stories, and new investment opportunities."
             buttonLabel="Get updates"
-            helperText="Thank you for subscribing."
           />
         </section>
       </main>

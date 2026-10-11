@@ -18,10 +18,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-600 text-agrogreen-dark mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="#" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">About Us</Link></li>
-              <li><Link to="#" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">For Farmers</Link></li>
-              <li><Link to="#" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">For Investors</Link></li>
-              <li><Link to="#" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">How It Works</Link></li>
+              <li><Link to="/about" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">About Us</Link></li>
+              <li><Link to="/farmers" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">For Farmers</Link></li>
+              <li><Link to="/investors" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">For Investors</Link></li>
+              <li><Link to="/how-it-works" className="text-gray-600 hover:text-agrogreen transition-colors text-sm">How It Works</Link></li>
             </ul>
           </div>
 
