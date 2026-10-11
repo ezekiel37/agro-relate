@@ -3,17 +3,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import AuthShell from "@/components/auth/AuthShell";
 import SignupForm from "@/components/auth/SignupForm";
-import { register, setToken } from "@/lib/api";
+import { useAuth } from "@/context/AuthContext";
+import { register } from "@/lib/api";
 import { SignupValues } from "@/lib/validation";
 
 const FarmerSignup: React.FC = () => {
   const navigate = useNavigate();
+  const { signIn } = useAuth();
 
   const handleSignup = async ({ name, email, password }: SignupValues) => {
-    const { token } = await register({ name, email, password, role: "farmer" });
-    setToken(token);
-    toast.success("Account created. Welcome to AgroRelate!");
-    navigate("/");
+    const { token, user } = await register({ name, email, password, role: "farmer" });
+    signIn(token, user);
+    toast.success("Account created. Next, set up your profile so others can find you.");
+    navigate("/dashboard/profile", { replace: true });
   };
 
   return (

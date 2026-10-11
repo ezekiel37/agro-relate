@@ -90,3 +90,63 @@ export const passwordStrength = (password: string) => {
   if (/[^A-Za-z0-9]/.test(password)) score++;
   return score;
 };
+
+const optionalText = (max: number, label: string) =>
+  z.string().trim().max(max, `${label} must be at most ${max} characters`).optional();
+
+export const profileSchema = z.object({
+  type: z.enum(["farmer", "buyer", "supplier"], {
+    errorMap: () => ({ message: "Choose what best describes you" }),
+  }),
+  products: z
+    .string()
+    .trim()
+    .min(1, "Add at least one product, e.g. maize, cassava"),
+  description: optionalText(1000, "Description"),
+  location: optionalText(100, "Location"),
+  phone: z
+    .string()
+    .trim()
+    .regex(/^$|^\+?[0-9 ()-]{7,20}$/, "Enter a valid phone number")
+    .optional(),
+  website: z
+    .string()
+    .trim()
+    .regex(/^$|^https?:\/\/\S+\.\S+$/, "Enter a full URL starting with http:// or https://")
+    .optional(),
+});
+export type ProfileValues = z.infer<typeof profileSchema>;
+
+export const accountSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(1, "Full name is required")
+    .min(2, "Name must be at least 2 characters")
+    .max(100, "Name must be at most 100 characters"),
+  location: optionalText(100, "Location"),
+});
+export type AccountValues = z.infer<typeof accountSchema>;
+
+export const changePasswordSchema = z
+  .object({
+    currentPassword: z.string().min(1, "Enter your current password"),
+    password: passwordSchema,
+    confirmPassword: z.string().min(1, "Please confirm your new password"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
+  });
+export type ChangePasswordValues = z.infer<typeof changePasswordSchema>;
+
+/** "maize, Cassava ,yam" -> ["maize", "cassava", "yam"] (deduplicated). */
+export const parseProducts = (value: string) =>
+  Array.from(
+    new Set(
+      value
+        .split(",")
+        .map((item) => item.trim().toLowerCase())
+        .filter(Boolean)
+    )
+  );

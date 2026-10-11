@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
@@ -9,11 +9,15 @@ import FieldError from "@/components/auth/FieldError";
 import PasswordInput from "@/components/auth/PasswordInput";
 import TextField from "@/components/auth/TextField";
 import { Button } from "@/components/ui/button";
-import { ApiError, login, setToken } from "@/lib/api";
+import { useAuth } from "@/context/AuthContext";
+import { ApiError, login } from "@/lib/api";
 import { LoginValues, loginSchema } from "@/lib/validation";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { signIn } = useAuth();
+  const redirectTo = (location.state as { from?: string } | null)?.from ?? "/dashboard";
   const {
     register,
     handleSubmit,
@@ -24,9 +28,9 @@ const Login: React.FC = () => {
   const onSubmit = async (values: LoginValues) => {
     try {
       const { token, user } = await login(values);
-      setToken(token);
+      signIn(token, user);
       toast.success(`Welcome back, ${user.name}!`);
-      navigate("/");
+      navigate(redirectTo, { replace: true });
     } catch (err) {
       setError("root", {
         message:
