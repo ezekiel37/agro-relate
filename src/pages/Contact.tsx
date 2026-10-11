@@ -3,12 +3,11 @@ import Navbar from "@/components/Navbar";
 import Newsletter from "@/components/marketing/Newsletter";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import FieldError from "@/components/auth/FieldError";
 import TextField from "@/components/auth/TextField";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
 import { ApiError, sendContactMessage } from "@/lib/api";
 import { ContactValues, contactSchema } from "@/lib/validation";
 import { cn } from "@/lib/utils";
@@ -94,14 +93,14 @@ const Contact: React.FC = () => {
 
               <FieldError message={errors.root?.message} />
 
-              <Button
+              <LoadingButton
                 type="submit"
-                disabled={isSubmitting}
+                loading={isSubmitting}
+                loadingText="Sending..."
                 className="w-full bg-[#1E3C14] text-xs text-white hover:bg-[#162B0E]"
               >
-                {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
+                Send Message
+              </LoadingButton>
             </form>
           </div>
 

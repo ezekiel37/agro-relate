@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -274,9 +275,14 @@ const Discover: React.FC = () => {
             <Button variant="outline" onClick={closeDialog}>
               Cancel
             </Button>
-            <Button className={primaryButton} disabled={sendRequest.isPending} onClick={submitRequest}>
-              {sendRequest.isPending ? "Sending..." : "Send request"}
-            </Button>
+            <LoadingButton
+              className={primaryButton}
+              loading={sendRequest.isPending}
+              loadingText="Sending..."
+              onClick={submitRequest}
+            >
+              Send request
+            </LoadingButton>
           </DialogFooter>
         </DialogContent>
       </Dialog>
