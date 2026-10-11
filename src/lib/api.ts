@@ -1,3 +1,4 @@
+import axios, { AxiosError } from "axios";
 import type { ContactValues, LoginValues } from "./validation";
 
 const API_BASE_URL = (
@@ -118,57 +119,90 @@ export const clearToken = () => {
   }
 };
 
+// Render's free tier sleeps when idle and can take ~50s to wake, so allow a
+// generous window before giving up instead of hanging forever.
+export const REQUEST_TIMEOUT_MS = 60_000;
+
+declare module "axios" {
+  interface AxiosRequestConfig {
+    /** Attach the stored bearer token. */
+    withAuth?: boolean;
+    /** Set false when a 401 means "wrong input", not "session expired". */
+    signOutOn401?: boolean;
+  }
+}
+
+const http = axios.create({
+  baseURL: API_BASE_URL,
+  timeout: REQUEST_TIMEOUT_MS,
+  headers: { "Content-Type": "application/json" },
+});
+
+http.interceptors.request.use((config) => {
+  const token = config.withAuth ? getToken() : null;
+  if (token) config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
+
+http.interceptors.response.use(
+  (response) => {
+    // The API reports some failures as { success: false } with a 2xx status.
+    if (response.data?.success === false) {
+      throw new ApiError(
+        response.data.message ?? "Something went wrong. Please try again.",
+        response.status
+      );
+    }
+    return response;
+  },
+  (error: AxiosError<{ message?: string; errors?: FieldError[] }>) => {
+    if (error.code === AxiosError.ECONNABORTED || error.code === AxiosError.ETIMEDOUT) {
+      throw new ApiError(
+        "The server is taking too long to respond. It may be starting up, so please try again in a moment.",
+        0
+      );
+    }
+
+    if (!error.response) {
+      throw new ApiError(
+        "Could not reach the server. Check your connection and try again.",
+        0
+      );
+    }
+
+    const { status, data } = error.response;
+    if (error.config?.withAuth && status === 401 && error.config.signOutOn401 !== false) {
+      window.dispatchEvent(new Event(UNAUTHORIZED_EVENT));
+    }
+    throw new ApiError(
+      data?.message ?? "Something went wrong. Please try again.",
+      status,
+      Array.isArray(data?.errors) ? data.errors : []
+    );
+  }
+);
+
 type Query = Record<string, string | number | undefined>;
 
 async function request<T>(
   method: "GET" | "POST" | "PUT" | "DELETE",
-  path: string,
-  options: {
-    body?: unknown;
-    query?: Query;
-    auth?: boolean;
-    /** Set false when a 401 means "wrong input", not "session expired". */
-    signOutOn401?: boolean;
-  } = {}
+  url: string,
+  options: { body?: unknown; query?: Query; auth?: boolean; signOutOn401?: boolean } = {}
 ): Promise<T> {
-  const url = new URL(`${API_BASE_URL}${path}`);
-  for (const [key, value] of Object.entries(options.query ?? {})) {
-    if (value !== undefined && value !== "") url.searchParams.set(key, String(value));
-  }
+  // Drop empty filters so we don't send e.g. ?location= to the API.
+  const params = Object.fromEntries(
+    Object.entries(options.query ?? {}).filter(([, value]) => value !== undefined && value !== "")
+  );
 
-  const headers: Record<string, string> = {};
-  if (options.body !== undefined) headers["Content-Type"] = "application/json";
-  const token = options.auth ? getToken() : null;
-  if (token) headers.Authorization = `Bearer ${token}`;
-
-  let response: Response;
-  try {
-    response = await fetch(url, {
-      method,
-      headers,
-      body: options.body !== undefined ? JSON.stringify(options.body) : undefined,
-    });
-  } catch {
-    throw new ApiError(
-      "Could not reach the server. Check your connection and try again.",
-      0
-    );
-  }
-
-  const json = await response.json().catch(() => null);
-
-  if (!response.ok || json?.success === false) {
-    if (options.auth && response.status === 401 && options.signOutOn401 !== false) {
-      window.dispatchEvent(new Event(UNAUTHORIZED_EVENT));
-    }
-    throw new ApiError(
-      json?.message ?? "Something went wrong. Please try again.",
-      response.status,
-      Array.isArray(json?.errors) ? json.errors : []
-    );
-  }
-
-  return json?.data as T;
+  const response = await http.request<{ data: T }>({
+    method,
+    url,
+    data: options.body,
+    params,
+    withAuth: options.auth,
+    signOutOn401: options.signOutOn401,
+  });
+  return response.data?.data as T;
 }
 
 // Auth
